@@ -1,4 +1,4 @@
-// base class
+// Base class
 class Employee {
     constructor(name, department) {
         this.name = name;
@@ -10,7 +10,7 @@ class Employee {
     }
 }
 
-// subclass for Manager
+// Subclass for Manager
 class Manager extends Employee {
     constructor(name, department, teamSize) {
         super(name, department, teamSize);
@@ -21,19 +21,40 @@ class Manager extends Employee {
     }
 }
 
+// Employees
 const employees = [
     new Employee("Ed", "Sales"),
     new Employee("Edd", "Marketing"),
     new Employee("Eddy", "HR")
 ];
 
-for (const employee of employees) {
-    console.log(employee.describe());
-}
-
+// Managers
 const man1 = new Manager("Alice", "Engineering", 5);
 const man2 = new Manager("Bob", "Design", 3);
 
+// Display descriptions
+for (const employee of employees) {
+    console.log(employee.describe());
+}
 for (const manager of [man1, man2]) {
     console.log(manager.describe());
 }
+
+// Company class
+class Company {
+    constructor(name) {
+        this.name = name;
+        this.employees = [];
+    }
+    addEmployee(employee) { 
+        this.employees.push(employee);
+    }
+
+    listEmployees() {
+        console.log("Current Employees:");
+        this.employees.forEach(employee => {
+            console.log(employee.describe());
+        });
+}
+}
+
