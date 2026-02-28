@@ -58,3 +58,18 @@ class Company {
 }
 }
 
+
+
+// instantiate company and add employees
+const myCompany = new Company("Tech Solutions");
+
+const emp4 = new Employee("Charlie", "Support");
+const emp5 = new Employee("Dave", "Development");
+
+const man3 = new Manager("Eve", "Operations", 4);
+
+myCompany.addEmployee(emp4);
+myCompany.addEmployee(emp5);
+myCompany.addEmployee(man3);
+
+myCompany.listEmployees();
